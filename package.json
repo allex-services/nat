@@ -1,0 +1,21 @@
+{
+  "name": "allex_natservice",
+  "version": "0.1.0",
+  "description": "NatService",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.hers.rs:allex_services/nat.git"
+  },
+  "keywords": [
+    "ecosystem:allex",
+    "Service",
+    "Nat"
+  ],
+  "author": "HERS Belgrade",
+  "license": "ISC"
+}
+
