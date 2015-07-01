@@ -1,7 +1,7 @@
 function createClientSide(execlib) {
   'use strict';
   var execSuite = execlib.execSuite,
-  dataServicePack = execSuite.registry.register('allex_dataservice'),
+  dataServicePack = execSuite.registry.get('allex_dataservice'),
   ParentServicePack = dataServicePack;
 
   return {
