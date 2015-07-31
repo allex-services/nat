@@ -4,6 +4,8 @@ function createNatService(execlib, ParentServicePack) {
     dataSuite = execlib.dataSuite,
     MemoryStorage = dataSuite.MemoryStorage;
 
+  dataSuite.filterFactory.extend('natlookup',require('./natlookupfiltercreator'));
+
   function factoryCreator(parentFactory) {
     return {
       'service': require('./users/serviceusercreator')(execlib, parentFactory.get('service')),

@@ -5,7 +5,11 @@ function createClientSide(execlib) {
   ParentServicePack = dataServicePack;
 
   return {
-    SinkMap: require('./sinkmapcreator')(execlib, ParentServicePack)
+    SinkMap: require('./sinkmapcreator')(execlib, ParentServicePack),
+    Tasks: [{
+      name: 'natLookup',
+      klass: require('./tasks/natLookup')(execlib)
+    }]
   };
 }
 
