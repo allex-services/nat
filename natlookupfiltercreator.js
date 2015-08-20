@@ -16,10 +16,10 @@ function createNatLookupFilterCreator(execlib,basicfilters) {
       return false;
     }
     if(lib.isArray(datahash.iport)){
-      console.log(this.iport >= datahash.iport[0] && this.iport <= datahash.iport[1]);
+      //console.log(this.iport >= datahash.iport[0] && this.iport <= datahash.iport[1]);
       return this.iport >= datahash.iport[0] && this.iport <= datahash.iport[1]; 
     }
-    console.log(this.iport === datahash.iport);
+    //console.log(this.iport === datahash.iport);
     return this.iport === datahash.iport;
   };
 
