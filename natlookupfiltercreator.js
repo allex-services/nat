@@ -10,9 +10,9 @@ function createNatLookupFilterCreator(execlib,basicfilters) {
   }
   lib.inherit(NatLookupFilter, Filter);
   NatLookupFilter.prototype.isOK = function (datahash) {
-    console.log('nat ok?',datahash,this.iaddress,this.iport);
+    //console.log('nat ok?',datahash,this.iaddress,this.iport);
     if (datahash.iaddress !== this.iaddress) {
-      console.log('nope');
+      //console.log('nope');
       return false;
     }
     if(lib.isArray(datahash.iport)){

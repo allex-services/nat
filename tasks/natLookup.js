@@ -33,12 +33,10 @@ function createNatLookupTask (execlib) {
     this.materializeDataTask = taskRegistry.run('materializeData', {
       sink: this.sink,
       data: [],
-      onRecordCreation: this.onRecord.bind(this)/*,
-      onRecordDeletion: this.onRecordDeleted.bind(this)*/
+      onRecordCreation: this.onRecord.bind(this)
     });
   };
   NatLookupTask.prototype.onRecord = function (record) {
-    console.log('NAT', record);
     var port;
     if (lib.isArray(record.iport) && record.eport === 0) {
       port = this.iport;
