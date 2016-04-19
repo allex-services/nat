@@ -10,6 +10,7 @@ function createNatLookupTask (execlib) {
     SinkTask.call(this, prophash);
     this.sink = prophash.sink;
     this.cb = prophash.cb;
+    this.iaddress = prophash.iaddress;
     this.iport = prophash.iport;
     this.materializeQueryTask = null;
   }
@@ -21,6 +22,7 @@ function createNatLookupTask (execlib) {
     this.materializeQueryTask = null;
     this.cb = null;
     this.iport = null;
+    this.iaddress = null;
     this.sink = null;
   };
   NatLookupTask.prototype.go = function () {
@@ -32,6 +34,11 @@ function createNatLookupTask (execlib) {
     }
     this.materializeQueryTask = taskRegistry.run('materializeQuery', {
       sink: this.sink,
+      filter: {
+        op: 'natlookup',
+        iaddress: this.iaddress,
+        iport: this.iport
+      },
       continuous: true,
       data: [],
       onRecordCreation: this.onRecord.bind(this)
@@ -48,7 +55,7 @@ function createNatLookupTask (execlib) {
       this.cb(record.eaddress, port);
     }
   };
-  NatLookupTask.prototype.compulsoryConstructionProperties = ['sink', 'iport', 'cb'];
+  NatLookupTask.prototype.compulsoryConstructionProperties = ['sink', 'iaddress', 'iport', 'cb'];
 
   return NatLookupTask;
 }
