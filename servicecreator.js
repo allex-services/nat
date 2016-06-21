@@ -1,7 +1,6 @@
-function createNatService(execlib, ParentServicePack) {
+function createNatService(execlib, ParentService) {
   'use strict';
-  var ParentService = ParentServicePack.Service,
-    dataSuite = execlib.dataSuite,
+  var dataSuite = execlib.dataSuite,
     MemoryStorage = dataSuite.MemoryStorage;
 
   dataSuite.filterFactory.extend('natlookup',require('./natlookupfiltercreator'));
