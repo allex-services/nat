@@ -32,6 +32,7 @@ function createNatLookupTask (execlib) {
     if (this.materializeQueryTask) {
       return;
     }
+    console.log('natting', this.iaddress+':'+this.iport);
     this.materializeQueryTask = taskRegistry.run('materializeQuery', {
       sink: this.sink,
       filter: {
