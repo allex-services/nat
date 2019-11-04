@@ -3,6 +3,9 @@ function createClientSide(execlib) {
   return [{
     name: 'natLookup',
     klass: require('./tasks/natLookup')(execlib)
+  },{
+    name: 'natClient',
+    klass: require('./tasks/natClient')(execlib)
   }]
 }
 
